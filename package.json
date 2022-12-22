@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node main.js",
-    "build": "docker build . -t server",
+    "build": "docker build . --platform linux/amd64 -t frwentianqi/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/77Vincent/test-server#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "pug": "^3.0.2"
   }
 }
