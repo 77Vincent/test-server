@@ -1,7 +1,7 @@
 doctype html
 html
     head
-        title= 'xiao mi mi'
+        title= title
         meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
         meta(name="description" content="xiao mi mi")
         meta(name="author" content="Vincent")
@@ -13,15 +13,20 @@ html
             include ../node_modules/normalize.css/normalize.css
             include index.css
 
-    body
+    body#App-body
         header
             h1 xiao mi mi
+            .App-Actions
+                a home
+                a project
+                a people
+                a career
+                a contact
 
         .App-main
             block content
 
         footer
-            h3 wang feng
 
         script
             include ../node_modules/jquery/dist/jquery.min.js

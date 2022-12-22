@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node main.js",
+    "push": "docker push frwentianqi/server:latest",
     "build": "docker build . --platform linux/amd64 -t frwentianqi/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,4 +1,7 @@
 extends layout
 
 block content
-    h1 Xiao mi mi
+    each v in articles
+        div
+            h3= v.title
+            p= v.body

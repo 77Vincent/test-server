@@ -1,3 +1,9 @@
-h1 {
-    font-size: 4em;
+#App-body {
+    max-width: 900px;
+    margin: auto;
+}
+
+.App-Actions {
+    display: flex;
+    justify-content: space-between;
 }
