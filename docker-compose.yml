@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:12.12-alpine
+    ports:
+      - "5444:5432"
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '1'
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_DB=main
+      - POSTGRES_USER=dev
+      - POSTGRES_PASSWORD=dev
+    volumes:
+      - ./.docker-data/pgdata:/var/lib/postgres/data/pgdata
+      - ./config/db:/docker-entrypoint-initdb.d

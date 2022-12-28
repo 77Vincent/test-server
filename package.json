@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node main.js",
+    "dev": "nodemon main.js",
     "push": "docker push frwentianqi/server:latest",
     "build": "docker build . --platform linux/amd64 -t frwentianqi/server",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,7 +24,9 @@
   "dependencies": {
     "express": "^4.18.2",
     "jquery": "^3.6.3",
+    "nodemon": "^2.0.20",
     "normalize.css": "^8.0.1",
+    "postgres-migrations": "^5.3.0",
     "pug": "^3.0.2"
   }
 }
