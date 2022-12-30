@@ -1,20 +1,25 @@
-FROM node:18
+FROM golang:1.19 as builder
 
-# Create app directory
-WORKDIR /usr/src/app
+WORKDIR /go/workspace
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+ENV GO111MODULE=on
+ENV CGO_ENABLED=0
+ENV GOOS=linux
+ENV GOPROXY="https://goproxy.cn,direct"
 
-# RUN npm config set registry http://registry.npm.taobao.org
+COPY go.mod go.sum ./
 
-# If you are building your code for production
-RUN npm install
-
-# Bundle app source
 COPY . .
 
+RUN go build test-server .
+
+FROM alpine:3.9
+
+ARG APP_PATH=/go/workspace
+WORKDIR ${APP_PATH}
+
+COPY --from=builder ${APP_PATH}/ ./
+
 EXPOSE 8080
-CMD [ "npm", "start" ]
+
+CMD ./test-server
