@@ -1,13 +1,26 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>{{.title}}</title>
+    <link rel="stylesheet" href="/assets/normalize.css">
+    <link rel="stylesheet" href="/assets/index.css">
 </head>
-<h1>
-    {{ .title }}
-</h1>
-{{ range .jj }}
-    <h3>
-        {{.}}
-    </h3>
+<body>
+<header>
+    <h1>
+        {{ .title }}
+    </h1>
+</header>
+{{ range .blogs }}
+    <div class="app-blog-block">
+        <h4>
+            {{.Title}}
+        </h4>
+        {{ range .Images }}
+            <img src="{{.Src}}">
+            <p>{{.Description}}</p>
+        {{end}}
+    </div>
 {{end}}
+</body>
 </html>

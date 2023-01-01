@@ -1,0 +1,38 @@
+body {
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    align-content: center;
+
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+.app-blog-block img {
+    width: 100%;
+    max-width: 600px;
+}

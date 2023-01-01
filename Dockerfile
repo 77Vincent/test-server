@@ -2,6 +2,7 @@ FROM golang:1.19 as builder
 
 WORKDIR /go/workspace
 
+ENV GIN_MODE=release
 ENV GO111MODULE=on
 ENV CGO_ENABLED=0
 ENV GOOS=linux
