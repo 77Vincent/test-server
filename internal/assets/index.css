@@ -35,4 +35,5 @@ h6 {
 .app-blog-block img {
     width: 100%;
     max-width: 600px;
+    border-radius: 25px;
 }
